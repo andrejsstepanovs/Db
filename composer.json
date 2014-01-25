@@ -1,0 +1,32 @@
+{
+    "name": "wormhit/Db",
+    "description": "Db active record adapter for zf2",
+    "license": "Apache-2.0",
+    "type": "library",
+    "keywords": [
+        "db",
+        "active record",
+        "zf2",
+        "zend framework 2"
+    ],
+    "homepage": "https://github.com/wormhit/Db",
+    "authors": [
+        {
+            "name": "Andrejs Stepanovs",
+            "email": "andrejsstepanovs@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "zendframework/zendframework": "2.*",
+        "phpunit/phpunit": "3.7.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Db": "src/"
+        },
+        "classmap": [
+            "./Module.php"
+        ]
+    }
+}
