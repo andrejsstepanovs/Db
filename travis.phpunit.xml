@@ -12,5 +12,8 @@
             <file>Module.php</file>
         </blacklist>
     </filter>
+    <logging>
+        <log type="coverage-clover" target="./test/build/logs/clover.xml"/>
+    </logging>
 </phpunit>
 
