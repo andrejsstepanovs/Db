@@ -312,6 +312,7 @@ class AbstractModelTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Db\Exception\UnknownCallableException
+     * @covers \Db\Exception\UnknownCallableException<extended>
      */
     public function testUnknownCallable()
     {
@@ -320,6 +321,7 @@ class AbstractModelTest extends PHPUnit_Framework_TestCase
 
     /**
      * @expectedException \Db\Exception\UnknownCallableException
+     * @covers \Db\Exception\UnknownCallableException<extended>
      */
     public function testUnknownCallableWithParams()
     {
