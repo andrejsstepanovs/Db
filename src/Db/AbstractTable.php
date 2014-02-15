@@ -172,6 +172,7 @@ class AbstractTable extends AbstractTableGateway
         if (empty($this->columns)) {
             /** @var $column \Zend\Db\Metadata\Object\ColumnObject */
             $columnObjects = $this->getMetadataTableObject()->getColumns();
+            $columns = array();
             foreach ($columnObjects as $column) {
                 $columns[] = $column->getName();
             }
