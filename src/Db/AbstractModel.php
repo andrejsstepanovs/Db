@@ -104,7 +104,7 @@ class AbstractModel implements \ArrayAccess
      */
     public function unsetData($key)
     {
-        $this->data[$key] = null;
+        unset($this->data[$key]);
 
         return $this;
     }
