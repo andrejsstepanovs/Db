@@ -110,6 +110,7 @@ class AbstractTable extends AbstractTableGateway
 
     /**
      * @return array
+     * @throws Exception\TablePrimaryNotFoundException
      */
     public function getPrimary()
     {
@@ -184,7 +185,6 @@ class AbstractTable extends AbstractTableGateway
 
     /**
      * @return \Zend\Db\ResultSet\ResultSet
-     * @throws Exception\WrongModuleException
      */
     public function fetchAll()
     {
@@ -192,19 +192,21 @@ class AbstractTable extends AbstractTableGateway
     }
 
     /**
+     * @param string $column
+     * @param null   $where
+     *
      * @return \Zend\Db\ResultSet\ResultSet
-     * @throws Exception\WrongModuleException
      */
     public function fetchUniqeColum($column, $where = null)
     {
         return $this->select(
-            function (Select $select) use ($column, $where) {
-                $select->quantifier(Select::QUANTIFIER_DISTINCT);
-                $select->columns(array($column));
-                if ($where) {
-                    $select->where($where);
-                }
-            }
+                    function (Select $select) use ($column, $where) {
+                        $select->quantifier(Select::QUANTIFIER_DISTINCT);
+                        $select->columns(array($column));
+                        if ($where) {
+                            $select->where($where);
+                        }
+                    }
         );
     }
 
