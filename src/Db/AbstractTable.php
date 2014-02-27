@@ -65,10 +65,14 @@ class AbstractTable extends AbstractTableGateway
 
     /**
      * @param string|array|Zend\Db\\Sql\TableIdentifier $table
+     *
+     * @return $this
      */
     public function setTable($table)
     {
         $this->table = $table;
+
+        return $this;
     }
 
     /**
